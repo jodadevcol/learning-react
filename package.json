@@ -1,0 +1,18 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "proyecto personal donde documentare, practicare, creare diferentes ejercicios/retos con React. Aplicando los conocimientos y/o enseñansas vistos en el repo de aprendiendo-react de midudev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "projects/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "17.0.0"
+  }
+}

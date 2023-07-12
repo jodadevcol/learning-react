@@ -1,0 +1,10 @@
+# node js
+node_modules
+package-lock.json
+
+# iOS
+**/.DS_Store
+.DS_Store
+
+# build files
+**/dist
