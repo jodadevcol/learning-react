@@ -46,6 +46,40 @@ importers:
         specifier: 4.4.0
         version: 4.4.0
 
+  projects/03-react-technical-test:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.14
+        version: 18.2.14
+      '@types/react-dom':
+        specifier: ^18.2.6
+        version: 18.2.6
+      '@vitejs/plugin-react-swc':
+        specifier: ^3.3.2
+        version: 3.3.2(vite@4.4.0)
+      eslint:
+        specifier: ^8.44.0
+        version: 8.44.0
+      eslint-plugin-react:
+        specifier: ^7.32.2
+        version: 7.32.2(eslint@8.44.0)
+      eslint-plugin-react-hooks:
+        specifier: ^4.6.0
+        version: 4.6.0(eslint@8.44.0)
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.1
+        version: 0.4.1(eslint@8.44.0)
+      vite:
+        specifier: ^4.4.0
+        version: 4.4.0
+
 packages:
 
   /@aashutoshrathi/word-wrap@1.2.6:
