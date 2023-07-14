@@ -1,0 +1,18 @@
+.jd-cat {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(280px, 60vh);
+  row-gap: 20px;
+  max-height: 100%;
+}
+
+.jd-cat--picture {
+  display: block;
+  max-width: 100%;
+}
+
+.jd-cat--picture img {
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
