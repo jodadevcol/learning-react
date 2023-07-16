@@ -8,7 +8,7 @@ export const Cat = () => {
   const { id, url } = useCat({ phrase })
 
 
-  const handleClick = async () => {
+  const handleClick = () => {
     refreshPhrase()
   }
 
