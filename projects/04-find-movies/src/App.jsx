@@ -6,17 +6,18 @@ import { useMovies } from './hooks/useMovies'
 import { useQuery } from './hooks/useQuery'
 
 import './App.css'
+import { Loading } from './components/Loading';
 
 function App() {
   const [sort, setSort] = useState(false)
   const { query, setQuery, error } = useQuery()
-  const { movies, getMovies } = useMovies({ query, sort })
+  const { movies, getMovies, loading } = useMovies({ query, sort })
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceGetMovies = useCallback(
     debounce(query => {
       getMovies({ query })
-    }, 300)
+    }, 500)
     , [getMovies]
   )
 
@@ -47,26 +48,33 @@ function App() {
         <h1 className='jd-head--title'>Movies</h1>
 
         <form className='jd-head--form' onSubmit={handleSubmit}>
-          <label htmlFor='searchMovie'>
-            {/* <span>Name movie</span> */}
-            <input type='text' name='searchMovie' id='searchMovie' placeholder='Iron man, Matrix,Star Wars... ' value={query} onChange={handleChange} />
+          <label className='jd-form--label label-text' htmlFor='searchMovie'>
+            <input className={`jd-form--input ${error ? 'error-input' : ''}`} type='text' name='searchMovie' id='searchMovie' placeholder='Iron man, Matrix,Star Wars... ' value={query} onChange={handleChange} />
+
+            <div className={`jd-form--error ${error ? 'error-input' : ''}`}>
+              {
+                error && <p>{error}</p>
+              }
+            </div>
           </label>
 
-          <label htmlFor='sorted'>
-            {/* <span>Name movie</span> */}
-            <input type='checkbox' name='sorted' id='sorted' checked={sort} onChange={handleSorted} />
-          </label>
+          <button className='jd-form--btn btn-submit' type='submit'><span>Find</span></button>
 
-          <button type='submit'><span>Find</span></button>
-
-          {
-            error && <p>{error}</p>
-          }
+          <div className='jd-form--box'>
+            <label className='jd-form--label label-checkbox' htmlFor='sorted'>
+              <span>Sort by <strong>title</strong></span>
+              <input type='checkbox' name='sorted' id='sorted' checked={sort} onChange={handleSorted} />
+            </label>
+          </div>
         </form>
       </header>
 
       <main>
-        <Movies movies={movies} />
+        {
+          loading
+            ? <Loading />
+            : <Movies movies={movies} />
+        }
       </main>
     </>
   )
