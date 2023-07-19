@@ -1,4 +1,5 @@
 import './Movies.css'
+import { Poster } from './Poster'
 
 /* eslint-disable react/prop-types */
 function SuccessMovies({ movies = [] }) {
@@ -8,12 +9,7 @@ function SuccessMovies({ movies = [] }) {
         movies.map(movie => (
           <li key={movie.id} className='jd-list-movies--item'>
             <article className='jd-movie'>
-              {
-                movie.poster &&
-                <picture className='jd-movie--poster'>
-                  <img src={movie.poster} alt={`Movie poster of ${movie.title}`} />
-                </picture>
-              }
+              <Poster poster={movie.poster} altText={movie.title} />
 
               <div className='jd-movie--info'>
                 <h2>{movie.title}</h2>
@@ -33,7 +29,11 @@ function SuccessMovies({ movies = [] }) {
 
 function WrongMovies() {
   return (
-    <p>No se encontraron peliculas en la busqueda</p>
+    <>
+      <div className='jd-movies--wrong'>
+        <p>No hay peliculas a renderizar.</p>
+      </div>
+    </>
   )
 }
 
