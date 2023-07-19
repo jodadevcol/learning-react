@@ -12,17 +12,17 @@ export function useQuery() {
     }
 
     if (query === "") {
-      setError("No se pueden buscar peliculas con el buscador vacio");
+      setError("No hay parametro de busqueda.");
       return;
     }
 
     if (query.match(/^\d+$/)) {
-      setError("No se pueden buscar peliculas con un numero");
+      setError("No se puede buscar por un numero al inicio.");
       return;
     }
 
     if (query.length < 2) {
-      setError("No se puede buscar peliculas con menos de 2 caracteres");
+      setError("Ingrese mas de 2 (dos) caracteres.");
       return;
     }
 
