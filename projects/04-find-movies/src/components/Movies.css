@@ -1,0 +1,61 @@
+.jd-movies {
+  max-width: 90vh;
+  margin-inline: auto;
+}
+
+@media screen and (min-width: 840px) {
+  .jd-movies {
+    max-width: 1080px;
+  }
+}
+
+.jd-list-movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 20px;
+  row-gap: 24px;
+  list-style: none;
+}
+
+.jd-movie {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.jd-movie--poster {
+  width: 100%;
+  max-width: 100%;
+  max-height: 280px;
+  overflow: hidden;
+}
+
+.jd-movie--poster img {
+  /* width: 100%; */
+  max-width: inherit;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.jd-movie--info h2 {
+  margin-block: 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.jd-info--specf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+.jd-info--type,
+.jd-info--year {
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 600;
+}
