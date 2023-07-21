@@ -9,10 +9,31 @@
   "workspaces": [
     "projects/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jodadevcol/learning-react.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jodadevcol/learning-react/issues"
+  },
+  "homepage": "https://github.com/jodadevcol/learning-react#readme",
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
   "devDependencies": {
+    "vite": "4.4.5",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "@vitejs/plugin-react-swc": "3.3.2",
     "standard": "17.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
   }
 }
