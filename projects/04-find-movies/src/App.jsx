@@ -1,19 +1,18 @@
 import { useCallback, useState } from 'react'
-import debounce from 'just-debounce-it';
+import debounce from 'just-debounce-it'
 
 import { Movies } from './components/Movies'
 import { useMovies } from './hooks/useMovies'
 import { useQuery } from './hooks/useQuery'
 
 import './App.css'
-import { Loading } from './components/Loading';
+import { Loading } from './components/Loading'
 
-function App() {
+function App () {
   const [sort, setSort] = useState(false)
   const { query, setQuery, error } = useQuery()
   const { movies, getMovies, loading } = useMovies({ query, sort })
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceGetMovies = useCallback(
     debounce(query => {
       getMovies({ query })

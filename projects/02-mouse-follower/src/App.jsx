@@ -1,7 +1,7 @@
 import { FollowMouse } from './components/FollowMouse'
 import './App.css'
 
-function App() {
+function App () {
   return (
     <main>
       <FollowMouse />

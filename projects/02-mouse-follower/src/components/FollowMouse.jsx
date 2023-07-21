@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 export const FollowMouse = () => {
   const [enabled, setEnabled] = useState(false)
@@ -39,7 +39,7 @@ export const FollowMouse = () => {
 
   return (
     <>
-      <div className="pointer-icon" style={{ transform: `translate(${position.x}px, ${position.y}px)` }}></div>
+      <div className='pointer-icon' style={{ transform: `translate(${position.x}px, ${position.y}px)` }} />
       <button onClick={() => setEnabled(!enabled)}>
         Follow pointer ({enabled ? 'Disable' : 'Active'})
       </button>

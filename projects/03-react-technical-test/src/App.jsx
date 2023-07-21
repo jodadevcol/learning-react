@@ -1,7 +1,7 @@
 import './App.css'
 import { Cat } from './components/Cat'
 
-function App() {
+function App () {
   return (
     <main>
       <h1>Gatitos</h1>

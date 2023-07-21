@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { getRandomFact } from "../services/phrase";
+import { useEffect, useState } from 'react'
+import { getRandomFact } from '../services/phrase'
 
-export function useCatPhrase() {
-  const [phrase, setPhrase] = useState();
+export function useCatPhrase () {
+  const [phrase, setPhrase] = useState()
 
   const refreshPhrase = () => {
-    getRandomFact().then((newFact) => setPhrase(newFact));
-  };
+    getRandomFact().then((newFact) => setPhrase(newFact))
+  }
 
-  useEffect(refreshPhrase, []);
+  useEffect(refreshPhrase, [])
 
-  return { phrase, refreshPhrase };
+  return { phrase, refreshPhrase }
 }

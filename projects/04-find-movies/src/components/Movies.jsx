@@ -2,7 +2,7 @@ import './Movies.css'
 import { Poster } from './Poster'
 
 /* eslint-disable react/prop-types */
-function SuccessMovies({ movies = [] }) {
+function SuccessMovies ({ movies = [] }) {
   return (
     <ul className='jd-list-movies'>
       {
@@ -27,7 +27,7 @@ function SuccessMovies({ movies = [] }) {
   )
 }
 
-function WrongMovies() {
+function WrongMovies () {
   return (
     <>
       <div className='jd-movies--wrong'>
@@ -37,7 +37,7 @@ function WrongMovies() {
   )
 }
 
-export function Movies({ movies }) {
+export function Movies ({ movies }) {
   const hasMovies = movies?.length > 0
 
   return (

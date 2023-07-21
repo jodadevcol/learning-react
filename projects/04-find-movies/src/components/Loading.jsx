@@ -1,9 +1,9 @@
 import './Loading.css'
 
-export function Loading() {
+export function Loading () {
   return (
     <div className='jd-loading'>
-      <span className='jd-loading--loader'></span>
+      <span className='jd-loading--loader' />
     </div>
   )
 }
