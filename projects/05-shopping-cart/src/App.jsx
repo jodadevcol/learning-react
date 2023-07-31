@@ -1,33 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '../../../../../../../../vite.svg'
+import { Header } from './components/Header'
+import { Products } from './components/Products'
+import { Footer } from './components/Footer'
+
+import { useFilters } from './hooks/useFilters'
+
+import { IS_DEVELOPMENT } from './config'
+import { products as InitialProducts } from './mockus/products.json'
+
 import './App.css'
 
 function App () {
-  const [count, setCount] = useState(0)
+  const [products] = useState(InitialProducts)
+  const { filters, setFilters, filterProducts } = useFilters()
+
+  const filteredProducts = filterProducts(products)
 
   return (
     <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
+      <main id='content'>
+        <Header onChange={setFilters} />
+
+        <Products products={filteredProducts} />
+      </main>
+
+      {
+        IS_DEVELOPMENT && <Footer filters={filters} />
+      }
     </>
   )
 }
