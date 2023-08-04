@@ -9,6 +9,7 @@ import { IS_DEVELOPMENT } from './config'
 import { products as InitialProducts } from './mockus/products.json'
 
 import './App.css'
+import { Cart } from './components/Cart'
 
 function App () {
   const [products] = useState(InitialProducts)
@@ -18,9 +19,11 @@ function App () {
 
   return (
     <>
-      <main id='content'>
-        <Header onChange={setFilters} />
+      <Header onChange={setFilters} />
 
+      <Cart />
+
+      <main id='content'>
         <Products products={filteredProducts} />
       </main>
 
