@@ -1,15 +1,16 @@
-import { useId, useState } from 'react'
+import { useId } from 'react'
+import { useFilters } from '../hooks/useFilters'
+
 import './Filters.css'
 
-export function Filters ({ onChange }) {
-  const [minPrice, setMinPrice] = useState(0)
+export function Filters () {
+  const { filters, setFilters } = useFilters()
+
   const minPriceFilterId = useId()
   const categoryFilterId = useId()
 
   const handleChangeMinPrice = (event) => {
-    setMinPrice(event.target.value)
-
-    onChange(prevState => ({
+    setFilters(prevState => ({
       ...prevState,
       minPrice: event.target.value
     }))
@@ -19,7 +20,7 @@ export function Filters ({ onChange }) {
     // HUELE MAL
     // se esta pasando por las props la funcion
     // nativa de react a un componente hijo
-    onChange(prevState => ({
+    setFilters(prevState => ({
       ...prevState,
       category: event.target.value
     }))
@@ -30,10 +31,10 @@ export function Filters ({ onChange }) {
       <div className='shop-filters--filter'>
         <label htmlFor={minPriceFilterId}>
           Price
-          <input type='range' name={minPriceFilterId} id={minPriceFilterId} min='0' max='2000' onChange={handleChangeMinPrice} />
+          <input type='range' name={minPriceFilterId} id={minPriceFilterId} min='0' max='2000' value={filters.minPrice} onChange={handleChangeMinPrice} />
         </label>
 
-        <span>${minPrice}</span>
+        <span>${filters.minPrice}</span>
       </div>
 
       <div className='shop-filters--filter'>
