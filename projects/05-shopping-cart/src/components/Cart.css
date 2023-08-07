@@ -2,6 +2,18 @@
   position: fixed;
   inset: 0;
   z-index: 10;
+  will-change: auto;
+  transition: visibility 400ms ease;
+}
+
+.cart-shop.visible {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.cart-shop.hidden {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .cart-wrapper {
@@ -13,18 +25,18 @@
   background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(0px);
   will-change: auto;
-  transition: background-color 300ms ease, backdrop-filter 300px ease;
+  transition: background-color 300ms ease, backdrop-filter 300ms ease;
 }
 
-.opened {
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
+.cart-wrapper.opened {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .cart-shopping {
-  position: absolute;
-  top: 4px;
-  right: 4px;
+  position: fixed;
+  top: 8px;
+  right: 8px;
   z-index: 20;
 }
 
@@ -50,10 +62,10 @@
 
 .cart-content {
   width: 100%;
-  max-width: 80vw;
+  max-width: 90vw;
   height: 100%;
   padding-block: 52px 40px;
-  padding-inline: 32px;
+  padding-inline: 24px;
   background-color: #0f0f0f;
   transform-origin: right;
   transform: translateX(100%);
@@ -62,7 +74,80 @@
   z-index: 10;
 }
 
+@media screen and (min-width: 640px) {
+  .cart-content {
+    max-width: 80vw;
+  }
+}
+
+
+@media screen and (min-width: 1040px) {
+  .cart-content {
+    max-width: 400px;
+  }
+}
+
 .cart-content.cart-open {
   transform: translateX(0%);
   transition-delay: 100ms;
+}
+
+.cart-content--list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+}
+
+.cart-content--item {
+  width: 100%;
+  max-width: 100%;
+  padding-block: 12px;
+  padding-inline: 12px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+}
+
+.cart-item--left {
+  max-width: 132px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.cart-item--left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-item--right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 4px;
+  text-align: left;
+}
+
+.cart-item-right--title span {
+  font-size: 12px;
+}
+
+.cart-item-right--qty span {
+  display: inline-block;
+  margin-inline-end: 6px;
+  font-size: 10px;
+}
+
+.cart-item-right--qty button {
+  margin: 0;
+  padding-block: 4px;
+  padding-inline: 4px;
+  font-size: 12px;
 }
