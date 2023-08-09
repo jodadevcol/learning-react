@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# design (figma, sketch, XD)
+*.sketch
+*.fig
+*.xd
+
+
+# Avoid your project being littered with annoying
+.DS_Store
+.prettierignore
