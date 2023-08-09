@@ -1,3 +1,5 @@
+import './CartItem.css'
+
 export function CartItem ({ title, price, thumbnail, quantity, addToCart }) {
   return (
     <div className='cart-item'>
