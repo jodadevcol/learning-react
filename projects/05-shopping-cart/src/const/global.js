@@ -3,3 +3,7 @@ export const CART_ACTION_TYPES = {
   REMOVE_FROM_CART: 'REMOVE_FROM_CART',
   CLEAR_CART: 'CLEAR_CART'
 }
+
+export const FILTER_CATEGORY = {
+  ALL: 'all'
+}
