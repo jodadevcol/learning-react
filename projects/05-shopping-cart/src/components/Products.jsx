@@ -1,32 +1,49 @@
 import { useCart } from '../hooks/useCart'
-import { AddToCartIcon } from './Icons'
+import { AddToCartIcon, RemoveCart } from './Icons'
 import './Products.css'
 
 export function Products ({ products }) {
-  const { addCart } = useCart()
+  const { cart, addToCart, removeFromCart } = useCart()
+
+  const checkProductInCart = ({ id }) => {
+    return cart.some(item => item.id === id)
+  }
 
   return (
     <section>
       <ul className='products'>
         {
-          products.slice(0, 10).map((product) => (
-            <li className='products-item' key={product.id}>
-              <article>
-                <figure>
-                  <img src={product.thumbnail} alt={product.title} />
-                </figure>
+          products.slice(0, 10).map((product) => {
+            const isProductInCart = checkProductInCart({ product })
 
-                <header>
-                  <h2>{product.title} - ${product.price}</h2>
-                  <div>
-                    <button onClick={() => addCart(product)}>
-                      <AddToCartIcon />
-                    </button>
-                  </div>
-                </header>
-              </article>
-            </li>
-          ))
+            return (
+              <li className='products-item' key={product.id}>
+                <article>
+                  <figure>
+                    <img src={product.thumbnail} alt={product.title} />
+                  </figure>
+
+                  <header>
+                    <h2>{product.title} - ${product.price}</h2>
+                    <div>
+                      <button onClick={() => {
+                        isProductInCart
+                          ? removeFromCart(product)
+                          : addToCart(product)
+                      }}
+                      >
+                        {
+                          isProductInCart
+                            ? <RemoveCart />
+                            : <AddToCartIcon />
+                        }
+                      </button>
+                    </div>
+                  </header>
+                </article>
+              </li>
+            )
+          })
         }
       </ul>
     </section>
