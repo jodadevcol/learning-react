@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { CartIcon } from './Icons'
+import { useCart } from '../hooks/useCart'
 
 import './Cart.css'
+import { CartItem } from './CartItem'
 
 export function Cart () {
+  const { cart, addToCart } = useCart()
   const [toggleCart, setToggleCart] = useState(false)
 
   const handleClickCart = () => {
@@ -27,24 +30,17 @@ export function Cart () {
             <article className='cart-content--wrap'>
               <ul className='cart-content--list'>
                 <li className='cart-content--item'>
-                  <div className='cart-item'>
-                    <div className='cart-item--left'>
-                      <img src='https://i.dummyjson.com/data/products/6/thumbnail.png' alt='Imagen del Macbook Pro' />
-                    </div>
-
-                    <div className='cart-item--right'>
-                      <div className='cart-item-right--title'>
-                        <span>MacBook Pro - $ <strong>1.340</strong></span>
-                      </div>
-
-                      <div className='cart-item-right--qty'>
-                        <span>
-                          Qty: 1
-                        </span>
-                        <button>+</button>
-                      </div>
-                    </div>
-                  </div>
+                  {
+                    cart.map(product => {
+                      return (
+                        <CartItem
+                          key={product.id}
+                          addToCart={() => addToCart(product)}
+                          {...product}
+                        />
+                      )
+                    })
+                  }
                 </li>
               </ul>
             </article>
