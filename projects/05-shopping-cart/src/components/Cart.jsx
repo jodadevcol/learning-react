@@ -6,11 +6,15 @@ import './Cart.css'
 import { CartItem } from './CartItem'
 
 export function Cart () {
-  const { cart, addToCart } = useCart()
+  const { cart, addToCart, clearCart } = useCart()
   const [toggleCart, setToggleCart] = useState(false)
 
-  const handleClickCart = () => {
+  const handleClickToggleCart = () => {
     setToggleCart(!toggleCart)
+  }
+
+  const handleClickClearCart = () => {
+    clearCart()
   }
 
   return (
@@ -18,7 +22,7 @@ export function Cart () {
       <aside className='cart-shopping'>
         <button
           className={`cart-shopping--btn cart-shopping--${toggleCart ? 'open' : 'close'}`}
-          onClick={handleClickCart}
+          onClick={handleClickToggleCart}
         >
           <CartIcon />
         </button>
@@ -43,6 +47,12 @@ export function Cart () {
                   }
                 </li>
               </ul>
+
+              <footer>
+                <button onClick={handleClickClearCart}>
+                  Clear to cart
+                </button>
+              </footer>
             </article>
           </div>
         </div>
