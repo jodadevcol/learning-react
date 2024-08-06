@@ -1,0 +1,10 @@
+# node_modules
+package-lock.json
+node_modules
+
+#system files
+.DS_Store
+projects/**/.DS_Store
+
+#dist files
+projects/**/dist
