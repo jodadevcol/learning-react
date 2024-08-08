@@ -1,72 +1,61 @@
-import resultUsers from '../mockup/resultUsers.json'
+import { type User } from "../types/user.d"
 
+interface Props {
+  showColors: boolean,
+  users: User[]
+}
 
-function UserList() {
-  const dataUsers = resultUsers.results
-  const hasUsers = dataUsers.length > 0
-
+function UserList({ showColors, users }: Props) {
   return (
     <>
-      <section>
-        <article>
-          <table>
-            <thead>
-              <tr>
-                <td>Name</td>
-                <td>Country</td>
-                <td>Email Address</td>
-                <td>Current Age</td>
-                <td>registered Age</td>
-                <td>Actions</td>
-              </tr>
-            </thead>
+      <table className='w-full'>
+        <thead>
+          <tr>
+            <td className='p-2 capitalize font-semibold text-lg text-white/90 bg-black/20'>Name</td>
+            <td className='p-2 capitalize font-semibold text-lg text-white/90 bg-black/20'>Country</td>
+            <td className='p-2 capitalize font-semibold text-lg text-white/90 bg-black/20'>Email Address</td>
+            <td className='p-2 capitalize font-semibold text-lg text-white/90 bg-black/20'>Current Age</td>
+            <td className='p-2 capitalize font-semibold text-lg text-white/90 bg-black/20'>registered Age</td>
+            <td className='p-2 capitalize font-semibold text-lg text-white/90 bg-black/20'>Actions</td>
+          </tr>
+        </thead>
 
-            <tbody>
-              {
-                hasUsers
-                  ? (
-                    dataUsers.map(user => (
-                      <tr key={user.login.uuid}>
-                        <td>
-                          <div>
-                            <img src={`${user.picture.thumbnail}`} alt={`Avatar of ${user.name.first} ${user.name.last}`} />
-                          </div>
-                          <div>
-                            <span>
-                              {user.name.first} {user.name.last}
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div>
-                            {
-                              user.location.country
-                            }
-                          </div>
-                        </td>
-                        <td>
-                          <div>{user.email}</div>
-                        </td>
-                        <td><div>{user.dob.age}</div></td>
-                        <td><div>{user.registered.age}</div></td>
-                        <td>
-                          <button>
-                            <span>Delete</span>
-                          </button>
-                        </td>
-                      </tr>
-                    ))
-                  )
-                  : (
-                    <tr>
-                      <td>Not results</td>
-                    </tr>
-                  )
-              }
-            </tbody>
-          </table>
-        </article>
-      </section>
+        <tbody>
+          {
+            users.map((user, index) => {
+              const isEven = index % 2 === 0 ? 'bg-black/10' : 'bg-black/5'
+              const showColor = showColors ? isEven : ''
+
+              return (
+                <tr key={user.login.uuid} className={showColor}>
+                  <td className='p-2 text-left'>
+                    <div className='flex items-center gap-x-4'>
+                      <div className='rounded-full overflow-hidden max-w-12 aspect-square'>
+                        <img className='w-full object-cover' src={`${user.picture.thumbnail}`} alt={`Avatar of ${user.name.first} ${user.name.last}`} />
+                      </div>
+                      <div>{user.name.first} {user.name.last}
+                      </div>
+                    </div>
+                  </td>
+                  <td className='p-2 text-left'>
+                    <div>{user.location.country}</div>
+                  </td>
+                  <td className='p-2 text-left'>
+                    <div>{user.email}</div>
+                  </td>
+                  <td className='p-2 text-center'><div>{user.dob.age}</div></td>
+                  <td className='p-2 text-center'><div>{user.registered.age}</div></td>
+                  <td className='p-2 text-center'>
+                    <button>
+                      <span>Delete</span>
+                    </button>
+                  </td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
     </>
   )
 }
