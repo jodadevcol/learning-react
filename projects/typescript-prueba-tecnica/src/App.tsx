@@ -21,8 +21,13 @@ function App() {
             <header className='mb-5'>
               <ul className='flex items-center justify-center'>
                 <li className='px-2'>
-                  <button className='flex items-center justify-center py-2 px-4 rounded bg-slate-900' onClick={toggleColors}>
+                  <button className='flex items-center justify-center py-2 px-4 rounded bg-slate-600/40' onClick={toggleColors}>
                     <span>Draw rows</span>
+                  </button>
+                </li>
+                <li className='px-2'>
+                  <button className='flex items-center justify-center py-2 px-4 rounded bg-slate-600/40'>
+                    <span>Sort by country</span>
                   </button>
                 </li>
               </ul>

@@ -9,7 +9,7 @@ function UserList({ showColors, users }: Props) {
   return (
     <>
       <table className='w-full'>
-        <thead>
+        <thead className="border-b-2 border-transparent">
           <tr>
             <td className='p-2 capitalize font-semibold text-lg text-white/90 bg-black/20'>Name</td>
             <td className='p-2 capitalize font-semibold text-lg text-white/90 bg-black/20'>Country</td>
@@ -23,11 +23,12 @@ function UserList({ showColors, users }: Props) {
         <tbody>
           {
             users.map((user, index) => {
-              const isEven = index % 2 === 0 ? 'bg-black/10' : 'bg-black/5'
+              const isEven = index % 2 === 0 ? 'bg-black/10' : 'bg-black/20'
               const showColor = showColors ? isEven : ''
+              const styleClass = `border-y-2 border-white/20 ${showColor}`
 
               return (
-                <tr key={user.login.uuid} className={showColor}>
+                <tr key={user.login.uuid} className={styleClass}>
                   <td className='p-2 text-left'>
                     <div className='flex items-center gap-x-4'>
                       <div className='rounded-full overflow-hidden max-w-12 aspect-square'>
