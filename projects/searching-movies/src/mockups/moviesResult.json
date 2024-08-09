@@ -1,0 +1,76 @@
+{
+  "Search": [
+    {
+      "Title": "Disney Gallery: The Mandalorian",
+      "Year": "2020–",
+      "imdbID": "tt12162902",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYjY0YWEzNTMtZjRlZi00MzQ1LThkMTAtMTk4OTE5MWVkYzFkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg"
+    },
+    {
+      "Title": "The Magical World of Disney",
+      "Year": "1954–1997",
+      "imdbID": "tt0046593",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNzEzMzQzMDc0Nl5BMl5BanBnXkFtZTcwMTk5ODczMQ@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "The Wonderful World of Disney",
+      "Year": "1997–2023",
+      "imdbID": "tt0132666",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNmJjYzNkNjgtZDZiNS00YjdmLTk4MDEtMzJkYWFkZmQ3ZWFiXkEyXkFqcGdeQXVyMjIzMTQ5NjE@._V1_SX300.jpg"
+    },
+    {
+      "Title": "I Killed My Lesbian Wife, Hung Her on a Meathook, and Now I Have a Three Picture Deal at Disney",
+      "Year": "1993",
+      "imdbID": "tt0166222",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BOTNlZDMxMDItM2M4Yy00NDNkLWJkOTMtMTJkMTRlYTNiZjNkXkEyXkFqcGdeQXVyNjMxODMyODU@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Walt Disney Animation Studios Short Films Collection",
+      "Year": "2015",
+      "imdbID": "tt6181728",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYTdkYjkyMzgtMjQyOC00ZmNiLTg1OTAtNzJhY2MyNjlmM2M5XkEyXkFqcGdeQXVyNDgyODgxNjE@._V1_SX300.jpg"
+    },
+    {
+      "Title": "One Day at Disney",
+      "Year": "2019–",
+      "imdbID": "tt10854760",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMzhiOGNmY2ItYWNmZS00NDcwLTg3OTItMmM3YjU1OTdjM2IzXkEyXkFqcGdeQXVyODQ4MjU1MDk@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Disney Gallery: Star Wars: The Book of Boba Fett",
+      "Year": "2022",
+      "imdbID": "tt19881256",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZjIzYjMwZTktN2U2Ni00MjA1LWIzOTMtZjkwZDU3MzM2YTMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg"
+    },
+    {
+      "Title": "The Story of Frozen: Making a Disney Animated Classic",
+      "Year": "2014",
+      "imdbID": "tt4007494",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTk0NjAzNjg4NF5BMl5BanBnXkFtZTgwNDQ3NjIwMzE@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Disney 365",
+      "Year": "2006–",
+      "imdbID": "tt1454750",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BOWRhNWJlYjAtMmJjNi00NTFmLWExYjctZTk2OGZiY2U5ZjlmL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjk3NTY1NTU@._V1_SX300.jpg"
+    },
+    {
+      "Title": "One Day at Disney",
+      "Year": "2019",
+      "imdbID": "tt11550148",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNzhiZDk5ZDUtY2E1MS00YzRlLWI2NjYtZWYyNzNjNTkyZjE4XkEyXkFqcGdeQXVyMTE5NDQ1MzQ3._V1_SX300.jpg"
+    }
+  ],
+  "totalResults": "694",
+  "Response": "True"
+}
