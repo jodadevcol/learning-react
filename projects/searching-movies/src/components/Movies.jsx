@@ -15,7 +15,11 @@ function MoviesFound ({ movies }) {
               </header>
 
               <picture className='md:h-64 overflow-hidden'>
-                <img className='h-full object-contain' src={movie.poster} alt={movie.title} />
+                {
+                  (movie.poster === 'N/A' || movie.poster === '')
+                    ? (<img className='h-full object-contain mx-auto' src='/placeholder-poster.webp' alt={movie.title} />)
+                    : (<img className='h-full object-contain mx-auto' src={movie.poster} alt={movie.title} />)
+                }
               </picture>
             </article>
           </li>
@@ -26,7 +30,11 @@ function MoviesFound ({ movies }) {
 }
 
 function NoMoviesFound () {
-  return (<p className='mt-5'>No movies found</p>)
+  return (
+    <div className="flex items-center justify-center">
+      <p className='font-semibold'>No movies to show you</p>
+    </div>
+  )
 }
 
 export function Movies ({ movies }) {
