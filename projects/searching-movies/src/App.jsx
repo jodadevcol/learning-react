@@ -2,12 +2,13 @@ import { Movies } from './components/Movies'
 import { useMovies } from './hooks/useMovies'
 import { useSearchMovies } from './hooks/useSearchMovies'
 import './App.css'
+import { Loading } from './components/Loading'
 
 
 
 function App () {
   const { search, setUpdateSearch, error } = useSearchMovies()
-  const { movies, getMovies } = useMovies({ search })
+  const { movies, loading, getMovies } = useMovies({ search })
 
   const hanldeSubmit = (event) => {
     event.preventDefault()
@@ -50,7 +51,9 @@ function App () {
 
       <section className='w-full'>
         {
-          <Movies movies={movies} />
+          loading
+            ? <Loading />
+            : <Movies movies={movies} />
         }
       </section>
     </main>
