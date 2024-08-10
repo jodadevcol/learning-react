@@ -1,17 +1,16 @@
-import moviesResult from '../mockups/moviesResult.json'
+import { useState } from 'react'
+import { GETMovies } from '../services/movies'
 
-export function useMovies () {
-  const isMovies = moviesResult.Search
+export function useMovies ({ search }) {
+  const [movies, setMovies] = useState([])
 
-  const movies = isMovies.map(movie => ({
-    id: movie.imdbID,
-    title: movie.Title,
-    year: movie.Year,
-    type: movie.Type,
-    poster: movie.Poster
-  }))
+  const getMovies = async () => {
+    const newMovies = await GETMovies({ search })
+    setMovies(newMovies)
+  }
 
   return {
-    movies
+    movies,
+    getMovies
   }
 }

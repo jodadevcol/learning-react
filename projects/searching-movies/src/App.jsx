@@ -7,11 +7,12 @@ import './App.css'
 
 function App () {
   const { search, setUpdateSearch, error } = useSearchMovies()
-  const { movies } = useMovies()
+  const { movies, getMovies } = useMovies({ search })
 
   const hanldeSubmit = (event) => {
     event.preventDefault()
-    console.log(search);
+
+    getMovies()
   }
 
   const hanldeChange = (event) => {
