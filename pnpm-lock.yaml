@@ -14,42 +14,45 @@ importers:
 
   projects/devjobs-web:
     dependencies:
+      '@fontsource-variable/kumbh-sans':
+        specifier: ^5.0.21
+        version: 5.0.21
       react:
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@eslint/js':
-        specifier: ^9.9.0
+        specifier: 9.9.0
         version: 9.9.0
       '@types/react':
-        specifier: ^18.3.3
+        specifier: 18.3.3
         version: 18.3.3
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: 18.3.0
         version: 18.3.0
       '@vitejs/plugin-react-swc':
-        specifier: ^3.5.0
+        specifier: 3.5.0
         version: 3.5.0(vite@5.4.1)
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.41)
       eslint:
-        specifier: ^9.9.0
+        specifier: 9.9.0
         version: 9.9.0(jiti@1.21.6)
       eslint-plugin-react:
-        specifier: ^7.35.0
+        specifier: 7.35.0
         version: 7.35.0(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-react-hooks:
-        specifier: ^5.1.0-rc.0
+        specifier: 5.1.0-rc.0
         version: 5.1.0-rc.0(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-react-refresh:
-        specifier: ^0.4.9
+        specifier: 0.4.9
         version: 0.4.9(eslint@9.9.0(jiti@1.21.6))
       globals:
-        specifier: ^15.9.0
+        specifier: 15.9.0
         version: 15.9.0
       postcss:
         specifier: 8.4.41
@@ -64,7 +67,7 @@ importers:
         specifier: 3.4.10
         version: 3.4.10
       vite:
-        specifier: ^5.4.1
+        specifier: 5.4.1
         version: 5.4.1
 
   projects/eccomerce-car-shopping:
@@ -398,6 +401,9 @@ packages:
   '@eslint/object-schema@2.1.4':
     resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource-variable/kumbh-sans@5.0.21':
+    resolution: {integrity: sha512-XZSkY52Wucakaki2GtGCzStMsY1rQX/6uSCvPIW19PWkKJTJqHL5+kKeTG150IEhgyxMfa+OE7kC8WQYX5fuAw==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -2357,6 +2363,8 @@ snapshots:
   '@eslint/js@9.9.0': {}
 
   '@eslint/object-schema@2.1.4': {}
+
+  '@fontsource-variable/kumbh-sans@5.0.21': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
