@@ -13,7 +13,7 @@
 }
 
 body {
-	@apply bg-white dark:bg-primary-400;
+	@apply bg-secondary-100 dark:bg-primary-400;
 	margin: 0;
 }
 

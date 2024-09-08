@@ -25,6 +25,38 @@ export default {
       maxWidth: {
         'screen-2xl': '1440px',
       },
+      fontSize: {
+        'heading-100': [
+          '1.75rem',
+          {
+            lineHeight: '2.375rem',
+          },
+        ],
+        'heading-200': [
+          '1.5rem',
+          {
+            lineHeight: '1.813rem',
+          },
+        ],
+        'heading-300': [
+          '1.25rem',
+          {
+            lineHeight: '1.25rem',
+          },
+        ],
+        'heading-400': [
+          '0.875rem',
+          {
+            lineHeight: '1.125rem',
+          },
+        ],
+        'body-100': [
+          '1rem',
+          {
+            lineHeight: '1.625rem',
+          },
+        ],
+      },
     },
   },
   plugins: [],
