@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
+import { Link } from 'wouter'
 
 function JobCard({
+  id,
   logo,
   company,
   postedAt,
@@ -26,7 +28,9 @@ function JobCard({
           <span className="text-body-100 capitalize">{contract}</span>
         </div>
         <div className="text-primary-300 dark:text-white">
-          <h2 className="text-heading-300 mb-4 font-bold">{position}</h2>
+          <h2 className="text-heading-300 mb-4 font-bold">
+            <Link href={`/job/${id}`}>{position}</Link>
+          </h2>
 
           <span className="text-body-100 text-secondary-300 capitalize">
             {company}
@@ -44,6 +48,7 @@ function JobCard({
 }
 
 JobCard.propTypes = {
+  id: PropTypes.number.isRequired,
   logo: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,
   postedAt: PropTypes.string.isRequired,

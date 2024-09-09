@@ -44,6 +44,7 @@ function JobGridWithResult({ jobs = [] }) {
         return (
           <li key={id} className="relative pt-6">
             <JobCard
+              id={id}
               logo={logo}
               company={company}
               postedAt={postedAt}
