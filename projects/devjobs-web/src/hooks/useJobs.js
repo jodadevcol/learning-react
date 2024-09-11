@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { GETAllJobs } from '../services/jobs'
+import { GETAllJobs, GETJobById } from '../services/jobs'
 
 export function useJobs() {
   const [jobs, setJobs] = useState([])
@@ -10,9 +10,14 @@ export function useJobs() {
     setJobs(newJobs)
   }, [])
 
+  const getJobById = useCallback(async ({ id }) => {
+    return await GETJobById({ id })
+  }, [])
+
   return {
     jobs,
-    getJobs,
     setJobs,
+    getJobs,
+    getJobById,
   }
 }

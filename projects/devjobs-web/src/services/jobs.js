@@ -33,4 +33,14 @@ const GETAllJobs = async () => {
   })
 }
 
-export { GETAllJobs }
+const GETJobById = async ({ id }) => {
+  const { jobs = [] } = JobsDate
+
+  if (!jobs) {
+    throw new Error('Error fetching jobs')
+  }
+
+  return jobs.find((job) => job.id === Number(id))
+}
+
+export { GETAllJobs, GETJobById }
