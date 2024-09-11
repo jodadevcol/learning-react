@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types'
 
 function MainLayout({ children }) {
   return (
-    <main>
+    <main className="relative">
       <div className="container-layout">{children}</div>
     </main>
   )
