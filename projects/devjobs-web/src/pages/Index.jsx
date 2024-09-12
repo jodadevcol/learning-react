@@ -1,6 +1,6 @@
-import MainLayout from '../assets/layout/MainLayout'
 import Jobs from '../components/jobs/Jobs'
 import { FiltersProvider } from '../context/Filters'
+import MainLayout from '../layout/MainLayout'
 
 function Index() {
   return (

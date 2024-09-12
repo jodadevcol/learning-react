@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'wouter'
-import MainLayout from '../assets/layout/MainLayout'
 import JobDetail from '../components/jobs/JobDetails'
 import { useJobs } from '../hooks/useJobs'
+import MainLayout from '../layout/MainLayout'
 
 function Job() {
   const { jobId } = useParams()
@@ -20,7 +20,7 @@ function Job() {
 
   return (
     <MainLayout>
-      <section className="relative -translate-y-10">
+      <section className="relative -mt-10">
         {jobDetail && <JobDetail job={jobDetail} />}
       </section>
     </MainLayout>

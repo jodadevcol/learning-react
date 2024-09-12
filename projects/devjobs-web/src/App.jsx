@@ -6,7 +6,7 @@ import Job from './pages/Job'
 
 function App() {
   return (
-    <div className="max-w-full">
+    <div className="max-w-full overflow-x-hidden">
       <Header />
 
       <Route path="/" component={Index} />
