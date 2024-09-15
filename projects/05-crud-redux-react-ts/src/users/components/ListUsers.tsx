@@ -7,7 +7,7 @@ function ListUsers() {
   const { removeUserById } = useUserActions()
 
   return (
-    <Card className=''>
+    <Card>
       <Title>
         Users
         <Badge className='ml-2 rounded-full bg-blue-800 text-white'>{users.length}</Badge>

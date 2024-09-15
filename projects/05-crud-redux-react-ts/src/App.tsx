@@ -1,18 +1,23 @@
 import '@/App.css'
-import { Card } from '@tremor/react'
-import CreateNewUser from '@users/components/CreateNewUser'
 import ListUsers from '@users/components/ListUsers'
 import { Toaster } from 'sonner'
+import CreateNewUser from './users/components/CreateNewUser'
 
 function App() {
   return (
     <>
-      <Card className='flex items-start justify-between gap-x-5'>
-        <ListUsers />
-        <CreateNewUser />
-      </Card>
+      <main>
+        <section>
+          <article>
+            <ListUsers />
+          </article>
+        </section>
 
-      <Toaster richColors />
+        <aside className='hidden'>
+          <CreateNewUser />
+        </aside>
+        <Toaster richColors />
+      </main>
     </>
   )
 }

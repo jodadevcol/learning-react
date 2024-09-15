@@ -39,7 +39,7 @@ function CreateNewUser() {
   }
 
   return (
-    <Card className='max-w-sm'>
+    <Card>
       <Title>Create New User</Title>
 
       <Divider className='my-4' />
