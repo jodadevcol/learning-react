@@ -1,8 +1,6 @@
-// 'use client';
-
+import { useAppSelector } from '@/hooks/useStore'
 import { Badge, Card, Divider, Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow, Title } from '@tremor/react'
-import { useAppSelector } from '../../hooks/useStore'
-import { useUserActions } from '../../hooks/useUserActions'
+import { useUserActions } from '@users/hooks/useUserActions'
 
 function ListUsers() {
   const users = useAppSelector((state) => state.user)
