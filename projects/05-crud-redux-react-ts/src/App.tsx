@@ -1,11 +1,14 @@
-import './App.css'
-import ListUsers from './components/users/ListUsers'
+import '@/App.css'
+import { Card } from '@tremor/react'
+import CreateNewUser from '@users/components/CreateNewUser'
+import ListUsers from '@users/components/ListUsers'
 
 function App() {
   return (
-    <div className=''>
+    <Card className='flex items-start justify-between gap-x-5'>
       <ListUsers />
-    </div>
+      <CreateNewUser />
+    </Card>
   )
 }
 
